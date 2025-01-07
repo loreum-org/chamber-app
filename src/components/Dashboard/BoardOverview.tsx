@@ -42,21 +42,7 @@ const sampleDirectors = [
   }
 ];
 
-interface BoardOverviewProps {
-  data?: {
-    directors: Array<{
-      id: string;
-      tokenId: string;
-      position: number;
-      status: 'active' | 'inactive';
-    }>;
-    quorum: number;
-    size: number;
-    seats: number;
-  };
-}
-
-const BoardOverview: FC<BoardOverviewProps> = ({ data }) => {
+const BoardOverview: FC = () => {
   return (
     <div className="board-overview">
       <div className="board-section">

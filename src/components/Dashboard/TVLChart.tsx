@@ -11,7 +11,7 @@ import {
 import './TVLChart.css';
 
 interface DataPoint {
-  timestamp: number;
+  timestamp: string | number;
   value: number;
 }
 
@@ -31,8 +31,9 @@ const TVLChart: FC<TVLChartProps> = ({ data }) => {
     }).format(value);
   };
 
-  const formatDate = (timestamp: number) => {
-    return new Date(timestamp).toLocaleDateString('en-US', {
+  const formatDate = (timestamp: string | number) => {
+    const date = typeof timestamp === 'string' ? new Date(timestamp) : new Date(timestamp);
+    return date.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric'
     });
@@ -50,10 +51,15 @@ const TVLChart: FC<TVLChartProps> = ({ data }) => {
     return null;
   };
 
+  // Convert string timestamps to numbers if needed
+  const processedData = data.map(point => ({
+    ...point,
+    timestamp: typeof point.timestamp === 'string' ? new Date(point.timestamp).getTime() : point.timestamp
+  }));
+
   return (
     <div className="tvl-chart">
       <div className="chart-header">
-        {/* <h3 className="chart-title">Total Value Locked</h3> */}
         <div className="chart-legend">
           <div className="legend-item">
             <div className="legend-color" />
@@ -64,7 +70,7 @@ const TVLChart: FC<TVLChartProps> = ({ data }) => {
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart
-            data={data}
+            data={processedData}
             margin={{ top: 10, right: 15, left: 0, bottom: 0 }}
           >
             <defs>
