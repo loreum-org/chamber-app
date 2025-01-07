@@ -1,4 +1,4 @@
-FROM node:23-slim as builder
+FROM node:18-slim as builder
 
 WORKDIR /app
 
@@ -14,8 +14,17 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Install production dependencies only
-RUN npm install --production
+# Production stage
+FROM node:18-slim
+
+WORKDIR /app
+
+# Copy built assets and package files
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package*.json ./
+
+# Install serve and production dependencies
+RUN npm install --omit=dev
 
 # Expose port
 ENV PORT=3000
