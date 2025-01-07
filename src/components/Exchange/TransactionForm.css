@@ -1,0 +1,98 @@
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px;
+}
+
+.input-container {
+  background: #f8f9fa;
+  border-radius: 0;
+  padding: 16px;
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.balance-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0;
+  padding: 8px 12px;
+  transition: border-color 0.2s ease;
+}
+
+.input-field:focus-within {
+  border-color: #2c3e50;
+}
+
+.input-field input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2c3e50;
+  width: 100%;
+  background: transparent;
+}
+
+.input-field input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input-field input::-webkit-outer-spin-button,
+.input-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-field input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.token-symbol {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.submit-button {
+  margin-top: 8px;
+  padding: 12px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background: #34495e;
+}
+
+.submit-button:active {
+  background: #2c3e50;
+  transform: translateY(1px);
+} 

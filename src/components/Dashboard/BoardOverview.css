@@ -1,0 +1,18 @@
+.board-overview {
+  width: 100%;
+}
+
+.board-section {
+  margin-bottom: 32px;
+}
+
+.board-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 16px 16px;
+} 

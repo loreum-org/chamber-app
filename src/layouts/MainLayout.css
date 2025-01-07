@@ -1,0 +1,58 @@
+/* Reset any default margins/padding */
+body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Main Layout Container */
+.main-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #f5f6fa;
+  position: relative;
+}
+
+/* Content Area */
+.main-layout-content {
+  flex: 1;
+  min-height: 100vh;
+  overflow-y: auto;
+  padding: 24px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.main-layout-content.nav-open {
+  margin-left: 240px;
+}
+
+/* Responsive Container */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .main-layout-content {
+    padding: 16px;
+    margin-left: 0 !important;
+  }
+
+  .main-layout-content.nav-open {
+    margin-left: 0;
+  }
+}

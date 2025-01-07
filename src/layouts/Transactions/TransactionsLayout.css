@@ -1,0 +1,96 @@
+.transactions-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.transactions-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.transactions-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.transaction-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Transaction Management Cards */
+.transaction-management {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.transaction-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.queue-card,
+.history-card,
+.submit-transaction-card {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e1e4e8;
+  color: #000000;
+}
+
+.card-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .transactions-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .transaction-filters {
+    flex-direction: column;
+  }
+
+  .transaction-management {
+    grid-template-columns: 1fr;
+  }
+} 
+
+h3 {
+  color: #000000;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+} 

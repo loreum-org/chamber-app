@@ -1,0 +1,67 @@
+.dex-pools {
+  width: 100%;
+}
+
+.pool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.pool-card {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.pool-card:hover {
+  border-color: #2c3e50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.pool-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.pool-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .pool-grid {
+    grid-template-columns: 1fr;
+  }
+} 

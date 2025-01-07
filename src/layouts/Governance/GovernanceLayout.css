@@ -1,0 +1,37 @@
+.governance-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.governance-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.proposals-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .governance-layout {
+    grid-template-columns: 1fr;
+  }
+} 
